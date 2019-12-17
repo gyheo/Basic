@@ -9,3 +9,17 @@ const guessField = document.querySelector('.guessField');
 
 let guessCount = 1;
 let resetButton;
+
+function checkGuess() {
+  let userGuess = Number(guessField.value);
+  if (guessCount === 1) {
+    guesses.textContent = 'Previous guesses: ';
+  }
+  guesses.textContent += userGuess + ' ';
+
+  guessCount++;
+  guessField.value = '';
+  guessField.focus();
+}
+
+guessSubmit.addEventListener('click', checkGuess);
