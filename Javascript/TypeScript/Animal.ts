@@ -1,8 +1,14 @@
 class Animal {
     name: string;
+    age: number;
     constructor(theName: string) {
         this.name = theName;
     }
+    // Multiple constructor implementations are not allowed.
+    // constructor(theName: string, theAge: number) {
+    //     this.name = theName;
+    //     this.age = theAge;
+    // }
     move(distanceInMeters: number = 0) {
         console.log(`Animal moved ${distanceInMeters}m.`);
     }
@@ -29,6 +35,7 @@ class Koala extends Animal {
 }
 
 const dog = new Dog("Choco");
+let dog2 = new Dog("Chiwawa", 4);
 const koala = new Koala("KoKo");
 
 alert(dog.name);

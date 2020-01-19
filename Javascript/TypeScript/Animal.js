@@ -2,11 +2,15 @@ class Animal {
     constructor(theName) {
         this.name = theName;
     }
+    // Multiple constructor implementations are not allowed.
+    // constructor(theName: string, theAge: number) {
+    //     this.name = theName;
+    //     this.age = theAge;
+    // }
     move(distanceInMeters = 0) {
         console.log(`Animal moved ${distanceInMeters}m.`);
     }
 }
-
 class Dog extends Animal {
     bark() {
         console.log('Woof! Woof!');
@@ -16,7 +20,6 @@ class Dog extends Animal {
         super.move(distanceInMeters);
     }
 }
-
 class Koala extends Animal {
     cry() {
         console.log('Quack!');
@@ -27,13 +30,13 @@ class Koala extends Animal {
     }
 }
 const dog = new Dog("Choco");
+let dog2 = new Dog("Chiwawa", 4);
 const koala = new Koala("KoKo");
-
 alert(dog.name);
 dog.bark();
 dog.move();
 dog.bark();
-
+alert(dog2.name + " " + dog2.age);
 alert(koala.name);
 koala.cry();
 koala.move();
