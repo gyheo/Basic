@@ -30,4 +30,11 @@ for (kind, numbers) in interestingNumbers {
     }
 }
 
+var name: String = "GeonYeong Heo"
+let birthYear: Int = 1993
+var height: Float = 171.1
+
 print(largest)
+print(name)
+print(birthYear)
+print(height)
