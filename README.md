@@ -1,7 +1,7 @@
-# Learning  
-Take me back to the start  
-Source from  
-   
+# Basic  
+기초부터 한걸음, 한걸음  
+  
+Source From
 javascriptinfo.js  
 MDN.  
 TypeScript Documentation.  
