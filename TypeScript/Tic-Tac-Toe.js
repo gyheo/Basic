@@ -41,21 +41,13 @@ function init() {
                         tableArrays[i][j].textContent = computer;
                         turn = true;
                     }
-                    // 가로
-                    if (tableArrays[i][0].textContent == tableArrays[i][1].textContent &&
-                        tableArrays[i][1].textContent == tableArrays[i][2].textContent &&
-                        tableArrays[i][0].textContent == tableArrays[i][2].textContent) {
+                    if ((tableArrays[i][0].textContent == tableArrays[i][1].textContent && tableArrays[i][1].textContent == tableArrays[i][2].textContent && tableArrays[i][0].textContent == tableArrays[i][2].textContent) ||
+                        (tableArrays[0][j].textContent == tableArrays[1][j].textContent && tableArrays[1][j].textContent == tableArrays[2][j].textContent && tableArrays[0][j].textContent == tableArrays[2][j].textContent) ||
+                        (tableArrays[0][0].textContent == tableArrays[1][1].textContent && tableArrays[1][1].textContent == tableArrays[2][2].textContent && tableArrays[0][0].textContent == tableArrays[2][2].textContent)) {
                         result = true;
                     }
-                    // 세로
-                    if (tableArrays[0][j].textContent == tableArrays[1][j].textContent &&
-                        tableArrays[1][j].textContent == tableArrays[2][j].textContent &&
-                        tableArrays[0][j].textContent == tableArrays[2][j].textContent) {
-                        result = true;
-                    }
-                    // 대각선
                     if (result) {
-                        if (tableArrays[i][0].textContent == player) {
+                        if (tableArrays[i][j].textContent == player) {
                             alert(`${player} WIN!`);
                         }
                         else {
