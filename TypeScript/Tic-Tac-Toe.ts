@@ -1,14 +1,13 @@
 const table = document.querySelector('table');
+let XO = document.getElementsByName("XO");
 let tableRows = document.querySelectorAll('tr');
 let tableArrays = [];
 
 function init() {
     // const form = document.querySelector("form");
-    let XO = document.getElementsByName("XO");
     let turn:boolean = true;
     let player: string = XO[0].value; // player 처음은 X, computer는 O
     let computer: string = XO[1].value;
-    let result:boolean = false;
 
     for(let i: number = 0; i < 2; i++) {
         XO[i].addEventListener('change', function(event) {
@@ -37,7 +36,7 @@ function init() {
 
                 // 빈 칸일 경우에만 X, O 입력 허용
                 if(tableArrays[i][j].textContent === "") {
-                    if(turn){
+                    if(turn) {
                         tableArrays[i][j].textContent = player;
                         turn = false;
                     }
@@ -46,14 +45,25 @@ function init() {
                         turn = true;
                     }
 
-                    if((tableArrays[i][0].textContent == tableArrays[i][1].textContent && tableArrays[i][1].textContent == tableArrays[i][2].textContent && tableArrays[i][0].textContent == tableArrays[i][2].textContent) ||
-                       (tableArrays[0][j].textContent == tableArrays[1][j].textContent && tableArrays[1][j].textContent == tableArrays[2][j].textContent && tableArrays[0][j].textContent == tableArrays[2][j].textContent) ||
-                       (tableArrays[0][0].textContent == tableArrays[1][1].textContent && tableArrays[1][1].textContent == tableArrays[2][2].textContent && tableArrays[0][0].textContent == tableArrays[2][2].textContent)) {
-                            result = true;
+                    let playerWin:boolean = false;
+                    let computerWin:boolean = false;
+                    
+                    if((tableArrays[i][0].textContent == player && tableArrays[i][1].textContent == player && tableArrays[i][2].textContent == player) ||
+                       (tableArrays[0][j].textContent == player && tableArrays[1][j].textContent == player && tableArrays[2][j].textContent == player) ||
+                       (tableArrays[0][0].textContent == player && tableArrays[1][1].textContent == player && tableArrays[2][2].textContent == player) ||
+                       (tableArrays[0][2].textContent == player && tableArrays[1][1].textContent == player && tableArrays[2][0].textContent == player)) {
+                            playerWin = true;
                     }
 
-                    if(result) {
-                        if(tableArrays[i][j].textContent == player) {
+                    if((tableArrays[i][0].textContent == computer && tableArrays[i][1].textContent == computer && tableArrays[i][2].textContent == computer) ||
+                       (tableArrays[0][j].textContent == computer && tableArrays[1][j].textContent == computer && tableArrays[2][j].textContent == computer) ||
+                       (tableArrays[0][0].textContent == computer && tableArrays[1][1].textContent == computer && tableArrays[2][2].textContent == computer) ||
+                       (tableArrays[0][2].textContent == computer && tableArrays[1][1].textContent == computer && tableArrays[2][0].textContent == computer)) {
+                            computerWin = true;
+                    }
+
+                    if(playerWin || computerWin) {
+                        if(playerWin) {
                             alert(`${player} WIN!`);
                         } else {
                             alert(`${computer} WIN!`);
@@ -67,10 +77,6 @@ function init() {
 
                         XO[0].disabled = false;
                         XO[1].disabled = false;
-
-                        result = false;
-                    } else {
-                        
                     }
                 }
             });
