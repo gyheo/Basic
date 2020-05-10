@@ -9,22 +9,31 @@ h1, p {
 }
 
 .container {
-    font-size: 0;
+    background: rebeccapurple;
 }
 
 .item {
-    display: inline-block;
     padding: 5%;
-    font-size: 1rem;
 }
 
 .item-a {
-    width: 30%;
     background-color: green;
 }
 
 .item-b {
-    width: 40%;
     background-color: greenyellow;
+}
 
+@media screen (min-width: 700px) {
+    .item {
+        display: inline-block;
+    }
+
+    .item-a {
+        width: 30px;
+    }
+
+    .item-b {
+        width: 50px;
+    }
 }
