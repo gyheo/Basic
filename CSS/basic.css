@@ -24,6 +24,10 @@ h1, p {
     background-color: greenyellow;
 }
 
+.item-c {
+    background-color: rebeccapurple;
+}
+
 @media screen (min-width: 700px) {
     .item {
         display: inline-block;
