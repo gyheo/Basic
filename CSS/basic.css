@@ -3,7 +3,12 @@ h1 {
 }
 
 p {
-    color: green;
+    /*color: green;*/
+}
+
+span {
+    border: 1px solid black;
+    background-color: lime;
 }
 
 li {
