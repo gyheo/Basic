@@ -2,8 +2,20 @@ h1 {
     color: red;
 }
 
+#winning {
+    background-color: red;
+    border: 5px solid black;
+}
+
+.better {
+    background-color: gray;
+    border: none !important;
+}
+
 p {
-    /*color: green;*/
+    background-color: blue;
+    color: white;
+    padding: 10px;
 }
 
 span {
