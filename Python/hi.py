@@ -6,7 +6,7 @@ print('hi')
 # Getting information from the user
 
 # name = input('Please enter your name : ')
-name = raw_input('Please enter your name : ')
+name = input('Please enter your name : ')
 print(name)
 
 # Printing blank lines can improve readability
