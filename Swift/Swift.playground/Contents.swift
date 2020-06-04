@@ -38,3 +38,15 @@ print(largest)
 print(name)
 print(birthYear)
 print(height)
+
+//var x = 0
+//var y = 0
+//var width = 100
+//var height = 100
+//
+//var path = UIBezierPath()
+//
+//var circle = UIBezierPath(ovalIn: CGRect(x: width/2 - height/2,
+//                                     y: 0,
+//                                     width: height,
+//                                     height: height))
