@@ -1,4 +1,6 @@
 # Numbers can be stored in variables
+pi = 3.141592
+print(pi)
 
 first_num = 5
 second_num = 3
@@ -20,4 +22,8 @@ print(num_value1 + num_value2)
 # Numbers stored as strings must be converted to numeric values before doing math
 num1 = input("input the num1 : ")
 num2 = input("input the num2 : ")
-print(int(num1) + int(num2))
+
+# print(int(num1) + float(num2))
+
+# convert to float
+print(float(num1) + float(num2))
