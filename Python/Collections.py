@@ -7,17 +7,26 @@
 # Lists Store anything
 
 # Retrieving ranges
-heogeoyeong = {}
-heogeoyeong['first'] = "Heo"
-heogeoyeong['last'] = "GeonYeong"
+python = {}
+python['language'] = "python"
+python['backend'] = "Django"
 
-Tom = {}
-Tom['first'] = "Tom"
-Tom['last'] = "Boy"
+ruby = {}
+ruby['language'] = "ruby"
+ruby['backend'] = "Ruby On Rails"
 
-print(heogeoyeong)
-print(Tom)
+print(python)
+print(ruby)
 
-people = []
-people.append(heogeoyeong)
-people.append(Tom)
+web_framework = []
+web_framework.append(python)
+web_framework.append(ruby)
+web_framework.append({
+    'language' : "java",
+    'backend' : "Spring"
+})
+
+print(web_framework)
+print(web_framework[0:3])
+print(web_framework[1:3])
+print(web_framework[2:3])
