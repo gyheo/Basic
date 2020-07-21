@@ -12,3 +12,8 @@
 print("It's a small world after all")
 
 # Commenting lines of code can help you debug and figure out which line of code is causing an error
+
+'''
+git commit test
+block comments
+'''
