@@ -5,5 +5,5 @@ Source From
 javascriptinfo.js  
 MDN.  
 TypeScript Documentation.  
-Swift Documentation.  
+Swift Documentation & CodeWithChris.  
 Python MS developers.  
