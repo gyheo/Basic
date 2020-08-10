@@ -16,13 +16,13 @@ else {
     print("I don\'t know")
 }
 
-let codeScore = 93
+var temperatureInFahrenheit = 90
 
-switch codeScore {
-    case 99, 98, 97, 96, 95, 94, 93, 92, 91, 90:
-        print("Senior")
-    case 80:
-        print("Junior")
-    default:
-        print("beginner")
+if temperatureInFahrenheit <= 32 {
+    print("It's very cold")
+} else if temperatureInFahrenheit >= 86 {
+    print("It's really warm. Don't forget to wear sunscreen.")
+}
+else {
+    print("It's not that cold.")
 }
