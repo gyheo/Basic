@@ -13,3 +13,15 @@ for counter in 1...5 {
     sum = sum + counter
 }
 print(sum)
+
+var counter = 5
+
+while counter < 10 {
+    print("Swift")
+    counter += 1
+}
+
+repeat {
+    print("Swift", counter)
+    counter += 1
+} while counter < 11
