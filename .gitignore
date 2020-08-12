@@ -2,3 +2,7 @@
 # Except this file
 !.gitignore
 .DS_Store
+.xcplayground
+.plist
+.xcuserstate
+.xcworkspacedata
