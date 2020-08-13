@@ -2,24 +2,30 @@ import UIKit
 
 var str = "Hello, playground"
 
-func addTwoNumbers () {
-    let x = 2
-    let y = 3
+//func addTwoNumbers (arg x:Int, arg2 y:Int) -> Int {
+func addTwoNumbers (x:Int, y:Int) -> Int {
+    let x = x
+    let y = y
     let z = x + y
     
     print(z)
+    
+    return z
 }
 
 // local variable declared in the scope
 // print(x)
 
-addTwoNumbers()
+let x = addTwoNumbers(x: 5, y: 6)
+print(x)
 
-func subtractTwoNumbers() {
-    let p = 4
-    let q = 3
+func subtractTwoNumbers(number1:Float, number2:Float) -> Float {
+    let p = number1
+    let q = number2
     let r = p - q
     print(r)
+    
+    return r
 }
 
-subtractTwoNumbers()
+subtractTwoNumbers(number1: 5.5, number2: 4.4)
