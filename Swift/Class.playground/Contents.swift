@@ -22,7 +22,7 @@ class Manager: Employee {
     var teamSize = 0
     
     override func doWork() {
-        print("I'm managing people")
+        print("I'm managing people. My team size is \(teamSize)")
         teamSize += 1
     }
     
@@ -31,6 +31,11 @@ class Manager: Employee {
     }
 }
 
+var p1 = Person()
+
+p1.name = "person"
+print(p1.name)
+// p1.doWork()
 
 let e1Name:String = "허건영"
 let e1EnrollYear:Int = 2018
@@ -59,6 +64,8 @@ employee2.role = e2Role
 manager1.name = m1Name
 manager1.enrollYear = m1EnrollYear
 manager1.role = m1Role
+manager1.teamSize = 5
+
 print(manager1.name)
 print(manager1.role)
 manager1.doWork()
