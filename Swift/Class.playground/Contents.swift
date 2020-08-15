@@ -2,11 +2,32 @@ import UIKit
 
 class Person {
     var name = ""
+    
+    init() {
+        // custom init code
+    }
+    
+    init(_ name:String) {
+        self.name = name
+    }
 }
 
 class Employee: Person {
     var enrollYear = 0
     var role = ""
+    
+    override init(_ name:String) {
+        super.init(name)
+        
+        self.role = "Analyst"
+    }
+    
+    init(_ name:String, _ role:String) {
+        super.init(name)
+        
+        self.name = name
+        self.role = role
+    }
     
     func doWork() {
         print("My name is \(name). I'm working")
@@ -49,9 +70,9 @@ let m1Name:String = "Heo GeonYeong"
 let m1EnrollYear:Int = 2020
 let m1Role:String = "Product Manager"
 
-let employee1:Employee = Employee()
-let employee2:Employee = Employee()
-var manager1 = Manager()
+let employee1:Employee = Employee(e1Name)
+let employee2:Employee = Employee(e2Name)
+var manager1 = Manager(m1Name)
 
 employee1.enrollYear = e1EnrollYear
 employee1.name = e1Name
@@ -82,3 +103,13 @@ employee2.levelUp()
 print(employee2.enrollYear)
 print(employee2.role)
 employee2.doWork()
+
+let person1 = Person()
+print(person1.name)
+
+let person2 = Person("Tom")
+print(person2.name)
+
+let employee3 = Employee("HGY", "Engineer")
+print(employee3.name)
+print(employee3.role)
