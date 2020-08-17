@@ -15,6 +15,7 @@ class Person {
 class Employee: Person {
     var enrollYear = 0
     var role = ""
+    var salary = 0
     
     override init(_ name:String) {
         super.init(name)
@@ -31,6 +32,7 @@ class Employee: Person {
     
     func doWork() {
         print("My name is \(name). I'm working")
+        salary += 1
     }
     
     func levelUp() {
@@ -41,6 +43,16 @@ class Employee: Person {
 // subclass and inheritance
 class Manager: Employee {
     var teamSize = 0
+    var incentive:Int {
+        // computed property
+        return teamSize * 1000
+    }
+    
+    init(_ name:String, _ team:Int) {
+        super.init(name)
+        
+        self.teamSize = team
+    }
     
     override func doWork() {
         print("I'm managing people. My team size is \(teamSize)")
@@ -72,7 +84,7 @@ let m1Role:String = "Product Manager"
 
 let employee1:Employee = Employee(e1Name)
 let employee2:Employee = Employee(e2Name)
-var manager1 = Manager(m1Name)
+var manager1 = Manager(m1Name, 10)
 
 employee1.enrollYear = e1EnrollYear
 employee1.name = e1Name
@@ -85,7 +97,6 @@ employee2.role = e2Role
 manager1.name = m1Name
 manager1.enrollYear = m1EnrollYear
 manager1.role = m1Role
-manager1.teamSize = 5
 
 print(manager1.name)
 print(manager1.role)
@@ -113,3 +124,6 @@ print(person2.name)
 let employee3 = Employee("HGY", "Engineer")
 print(employee3.name)
 print(employee3.role)
+
+let m = Manager("Chris", 11)
+print(m.incentive)
