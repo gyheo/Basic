@@ -28,7 +28,34 @@ let UINT32maxValue = UInt32.max
 let sumPI = 3 + 0.141592
 print(sumPI)
 
+// Floating-point Conversion
+
+let three = 3
+let pointOneFourOneFiveNineTwo = 0.141592
+
+let PI = Double(three) + pointOneFourOneFiveNineTwo
+print(PI)
+print(Int(PI))
+
 let decimalInteger = 14
 let binaryInteger = 0b01110
 let octalInteger = (0o10 - 0o01) * 2
 let hexaInteger = 0x10 - 0x1 * 2
+
+// boolean
+
+var TrueOrFalse = true
+print(TrueOrFalse)
+TrueOrFalse = false
+print(TrueOrFalse)
+
+let http404Error = (404, "Not Found")
+print(http404Error)
+
+let (statusCode, statusMessage) = http404Error
+print("The status code is \(statusCode)")
+print("The statusMessage is \(statusMessage)")
+
+let http200Status = (statusCode: 200, description: "OK")
+print("The status code is \(http200Status.statusCode)")
+print("The statusMessage is \(http200Status.description)")
