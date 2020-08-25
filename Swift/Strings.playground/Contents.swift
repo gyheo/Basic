@@ -27,3 +27,11 @@ let helloCharacters: [Character] = ["H", "E", "L", "L", "O", "!"]
 print(helloCharacters)
 let helloString:String = String(helloCharacters)
 print(helloString)
+
+// String Interpolation
+
+print(#"1 더하기 14는 \#(1 + 14)."#)
+print(#"6 times 7 is \#(6 * 7)."#)
+
+// Unicode, international standard encoding
+let eAcute: Character = "\u{E9}"
