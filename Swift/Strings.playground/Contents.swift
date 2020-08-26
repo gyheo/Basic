@@ -35,3 +35,21 @@ print(#"6 times 7 is \#(6 * 7)."#)
 
 // Unicode, international standard encoding
 let eAcute: Character = "\u{E9}"
+
+//let greeting = "안녕하세요🚶‍♂️"
+var greeting = "안녕하세요🚶‍♂️"
+greeting[greeting.startIndex]
+greeting[greeting.index(before:greeting.endIndex)]
+greeting[greeting.index(after:greeting.startIndex)]
+
+let index = greeting.index(greeting.startIndex, offsetBy: 0)
+greeting[index]
+
+greeting.insert(",", at: greeting.endIndex)
+print(greeting)
+
+greeting.insert(contentsOf: " 잘있어요.", at: greeting.endIndex)
+print(greeting)
+
+greeting.remove(at: greeting.index(before: greeting.endIndex))
+print(greeting)
