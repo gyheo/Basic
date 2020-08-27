@@ -53,3 +53,46 @@ print(greeting)
 
 greeting.remove(at: greeting.index(before: greeting.endIndex))
 print(greeting)
+
+let hiIndex = greeting.firstIndex(of: "하") ?? greeting.endIndex
+
+let hi = greeting[..<hiIndex]
+let hiString = String(hi)
+
+print(hiString)
+
+let iPhone12 = "Apple annouced iPhone 12"
+let iPhone12Same = "Apple annouced iPhone 12"
+
+if iPhone12 == iPhone12Same {
+    print("iPhone 12")
+} else {
+    print("It's not a iPhone")
+}
+
+let eAcuteQuestion = "Voulez-vouz un caf\u{E9}?"
+
+let combinedEAcuteQuestion = "Voulez-vouz un caf\u{65}\u{301}?"
+
+if eAcuteQuestion == combinedEAcuteQuestion {
+    print("It's same")
+}
+
+let schedule = [
+    "[외부]_일정1",
+    "[내부]_일정1",
+    "[외부]_일정2",
+    "[내부]_일정2",
+    "[외부]_일정3",
+    "[내부]_일정3",
+]
+
+var interSchedule = 0
+
+for key in schedule {
+    if key.hasPrefix("[내부]") {
+        interSchedule += 1
+    }
+}
+
+print("내부 일정 수 : \(interSchedule)")
