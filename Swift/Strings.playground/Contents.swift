@@ -96,3 +96,16 @@ for key in schedule {
 }
 
 print("내부 일정 수 : \(interSchedule)")
+
+// Unicode
+let running = "running🏃‍♂️"
+
+for codeUnit in running.utf8 {
+    print("\(codeUnit) ", terminator: "")
+}
+print("")
+
+for codeUnit in running.utf16 {
+    print("\(codeUnit) ", terminator: "")
+}
+print("")
