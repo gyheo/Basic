@@ -39,3 +39,37 @@ shoppingList
 
 var anotherList = shoppingList.removeLast()
 print(anotherList)
+
+for (index, item) in shoppingList.enumerated() {
+    print("\(index + 1) item is \(item)")
+}
+
+var musicGenres :Set<String> = ["Jazz", "Chill", "Alternative"]
+
+musicGenres.insert("Classic")
+print("I love \(musicGenres.count) music genres")
+
+for value in musicGenres.sorted() {
+    print(value)
+}
+
+let oddDigits:Set = [1, 3, 5, 7, 9]
+let evenDigits:Set = [2, 4, 6, 8, 10]
+let singlePrimeNumbers:Set = [2, 3, 5, 7]
+
+oddDigits.union(evenDigits).sorted()
+
+evenDigits.intersection(oddDigits)
+
+oddDigits.subtracting(singlePrimeNumbers).sorted()
+
+oddDigits.symmetricDifference(singlePrimeNumbers).sorted()
+
+let houseAnimals:Set = ["🐶", "🐱"]
+let farmAnimals:Set = ["🐮", "🐔", "🐑", "🐶", "🐱"]
+let cityAnimals:Set = ["🐦", "🐭"]
+
+houseAnimals.isSubset(of: farmAnimals)
+farmAnimals.isSuperset(of: houseAnimals)
+cityAnimals.isSuperset(of: farmAnimals)
+cityAnimals.isDisjoint(with: farmAnimals)
