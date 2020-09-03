@@ -73,3 +73,21 @@ houseAnimals.isSubset(of: farmAnimals)
 farmAnimals.isSuperset(of: houseAnimals)
 cityAnimals.isSuperset(of: farmAnimals)
 cityAnimals.isDisjoint(with: farmAnimals)
+
+var nameOfInt = [Int: String]()
+nameOfInt[1] = "One"
+
+//print(nameOfInt[1])
+
+nameOfInt = [:] // Empty Dictionary
+
+var shortExtension:[String: String] = ["C":"c", "C++":"cpp", "C#":"cs",
+                                      "JavaScript":"js", "TypeScript":"ts",
+                                      "Python":"py", "Ruby":"rb","Java":"java",
+                                      "Swift":"playground", "Kotlin":"kt"]
+
+print("Programming language extension number : \(shortExtension.count)")
+
+for (lang, ext) in shortExtension {
+    print("\(lang) extension is \(ext)")
+}
