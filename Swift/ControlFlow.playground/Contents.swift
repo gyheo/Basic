@@ -39,3 +39,31 @@ let minuteInterval = 5
 for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
     print("tickMark")
 }
+
+let finalSqaure = 25
+var board = [Int](repeating: 0, count:finalSqaure + 1)
+
+board[3] = +8; board[6] = +11; board[9] = +9; board[10] = +2
+board[14] = -10; board[19] = -11; board[22] = -2; board[24] = -8
+
+print(board)
+
+var square = 0
+var diceRoll = 0
+
+while square < finalSqaure {
+    diceRoll += 1
+    if diceRoll == 7 {
+        // 1...6 => 1...6 => 1...6
+        diceRoll = 1
+    }
+    
+    square += diceRoll
+    
+    if square < board.count {
+        square += board[square]
+    }
+    print("square : \(square), diceRoll : \(diceRoll), square : \(square)")
+}
+
+print("GAME OVER")
