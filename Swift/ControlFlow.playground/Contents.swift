@@ -67,3 +67,16 @@ while square < finalSqaure {
 }
 
 print("GAME OVER")
+
+// if, else if
+let microDust = 22 // 9월 5일 미세먼지
+
+if microDust < 15 {
+    print("좋음")
+} else if microDust < 35 {
+    print("보통")
+} else if microDust < 75 {
+    print("나쁨")
+} else {
+    print("매우나쁨")
+}
