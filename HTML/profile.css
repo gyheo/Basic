@@ -1,0 +1,15 @@
+li {
+    display: inline;
+}
+
+li a {
+    padding: 10px;
+}
+
+.progress {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
