@@ -7,7 +7,7 @@ function init() {
   // Date date = new Date();
   let date;
   let startTime = 0,
-    endTime;
+    endTime = 0;
 
   triggerButton.addEventListener("click", function () {
     if (status) {
@@ -23,8 +23,8 @@ function init() {
       // console.log(endTime);
 
       let timeDiff = endTime - startTime;
-      let resultSeconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
+      // 초 단위를 60으로 계속 표현하게 되면서 계산에 오류가 생겨 방식 변경
+      let resultSeconds = timeDiff / 1000;
       duration.innerHTML = `${resultSeconds}초 입니다.`;
       timeBoard.appendChild(duration);
       status = true;
