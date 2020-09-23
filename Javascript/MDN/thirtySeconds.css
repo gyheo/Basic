@@ -1,0 +1,14 @@
+.time-board {
+  position: absolute;
+  border: 3px solid;
+  padding: 25px;
+  border-color: darkseagreen;
+  border-radius: 15%;
+  text-align: center;
+  width: 380px;
+  height: 280px;
+  margin-top: -200px;
+  margin-left: -200px;
+  left: 50%;
+  top: 50%;
+}
