@@ -1,29 +1,40 @@
 let button = document.querySelector("button");
 let item = document.querySelector("#item");
 let shoppingList = document.querySelector("#shoppingList");
+let order = [];
 let index = 0;
 
 function init() {
   item.focus();
 
-  if (localStorage.length > 0) {
-    for (let key = 0; key < localStorage.length; key++) {
-      let li = document.createElement("li");
-      li.setAttribute("id", key);
+  console.log(localStorage);
 
-      let deleteButton = document.createElement("button");
+  for (let i = 0; i < localStorage.length; i++) {
+    order.push(localStorage.key(i));
+  }
 
-      deleteButton.innerHTML = "Delete";
-      deleteButton.addEventListener("click", function () {
-        localStorage.removeItem(key.toString());
-        deleteButton.parentElement.remove();
-      });
+  // 순서 정렬
+  order.sort();
 
-      li.innerHTML = localStorage.getItem(key);
-      li.appendChild(deleteButton);
+  for (let i = 0; i < order.length; i++) {
+    let li = document.createElement("li");
+    li.setAttribute("id", order[i].toString());
 
-      shoppingList.appendChild(li);
-    }
+    let deleteButton = document.createElement("button");
+
+    deleteButton.innerHTML = "Delete";
+    deleteButton.addEventListener("click", function () {
+      let id = deleteButton.parentElement.getAttribute("id");
+      localStorage.removeItem(id.toString());
+      deleteButton.parentElement.remove();
+    });
+
+    li.innerHTML = localStorage.getItem(order[i]);
+    li.appendChild(deleteButton);
+
+    index = index + 1;
+
+    shoppingList.appendChild(li);
   }
 
   item.addEventListener("keyup", function (event) {
@@ -38,13 +49,13 @@ function init() {
 function AddItems() {
   let li = document.createElement("li");
   li.setAttribute("id", index);
-  index = index + 1;
+
   let deleteButton = document.createElement("button");
 
   deleteButton.innerHTML = "Delete";
   deleteButton.addEventListener("click", function () {
-    localStorage.removeItem(index.toString());
-    index = index - 1;
+    let id = deleteButton.parentElement.getAttribute("id");
+    localStorage.removeItem(id.toString());
     deleteButton.parentElement.remove();
   });
 
@@ -57,6 +68,7 @@ function AddItems() {
 
   shoppingList.appendChild(li);
   localStorage.setItem(index.toString(), item.value);
+  index = index + 1;
 
   item.value = "";
   item.focus();
