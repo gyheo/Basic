@@ -7,34 +7,26 @@ let index = 0;
 function init() {
   item.focus();
 
-  console.log(localStorage);
-
   for (let i = 0; i < localStorage.length; i++) {
     order.push(localStorage.key(i));
   }
 
-  // 순서 정렬
-  order.sort();
+  // 순서 오름차순 정렬
+  order = order.sort(function (a, b) {
+    return a - b;
+  });
 
   for (let i = 0; i < order.length; i++) {
-    let li = document.createElement("li");
-    li.setAttribute("id", order[i].toString());
-
-    let deleteButton = document.createElement("button");
-
-    deleteButton.innerHTML = "Delete";
-    deleteButton.addEventListener("click", function () {
-      let id = deleteButton.parentElement.getAttribute("id");
-      localStorage.removeItem(id.toString());
-      deleteButton.parentElement.remove();
-    });
-
-    li.innerHTML = localStorage.getItem(order[i]);
-    li.appendChild(deleteButton);
-
-    index = index + 1;
+    console.log(localStorage.getItem(order[i]));
+    let li = MakeLi(localStorage.getItem(order[i]), order[i]);
 
     shoppingList.appendChild(li);
+  }
+
+  if (localStorage.length == 0) {
+    index = 0;
+  } else {
+    index = parseInt(order[order.length - 1]) + 1;
   }
 
   item.addEventListener("keyup", function (event) {
@@ -46,9 +38,9 @@ function init() {
   button.addEventListener("click", AddItems);
 }
 
-function AddItems() {
+function MakeLi(liValue, liIndex) {
   let li = document.createElement("li");
-  li.setAttribute("id", index);
+  li.setAttribute("id", liIndex.toString());
 
   let deleteButton = document.createElement("button");
 
@@ -59,8 +51,14 @@ function AddItems() {
     deleteButton.parentElement.remove();
   });
 
-  li.innerHTML = item.value;
+  li.innerHTML = liValue;
   li.appendChild(deleteButton);
+
+  return li;
+}
+
+function AddItems() {
+  let li = MakeLi(item.value, index);
 
   if (item.value.trim() == "") {
     return;
