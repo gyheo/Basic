@@ -35,6 +35,10 @@ def turnDown():
     t.forward(10)
 
 
+def clear():
+    t.clear()
+
+
 t.shape("turtle")
 t.speed(0)
 
@@ -46,5 +50,7 @@ screen.onkeypress(turnRight, "Right")
 screen.onkeypress(turnLeft, "Left")
 screen.onkeypress(turnUp, "Up")
 screen.onkeypress(turnDown, "Down")
+screen.onkeypress(clear, "Escape")
+
 t.listen()
 t.mainloop()
