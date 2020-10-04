@@ -17,12 +17,14 @@ function init() {
   });
 
   for (let i = 0; i < order.length; i++) {
-    console.log(localStorage.getItem(order[i]));
+    // console.log(localStorage.getItem(order[i]));
+    // LocalStorage 에서 저장된 list 출력
     let li = MakeLi(localStorage.getItem(order[i]), order[i]);
 
     shoppingList.appendChild(li);
   }
 
+  // li의 index 설정, 아무것도 없었을 경우 0부터 시작
   if (localStorage.length == 0) {
     index = 0;
   } else {
