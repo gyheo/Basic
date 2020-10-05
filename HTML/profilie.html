@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
-    <title>허건영 (Heo GeonYeong)</title>
-</head>
-<body>
-    <header>
-        <h1>허건영 (Heo GeonYeong)</h1>
+    <link rel="stylesheet" href="profile.css" />
+    <title>Running Milestone</title>
+  </head>
+  <body>
+    <header class="box">
+      <h1>Running Milestone</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">MAJOR</a></li>
-            <li><a href="#">MARATHON</a></li>
-            <li><a href="#">STAY LOCATION</a></li>
-        </ul>
-    </nav>
-    <form>
-        <input type="text" name="query" placeholder="Search query">
-        <input type="submit" value="Search">
-    </form>
     <main>
-        <article>
-            <div class="todayStandard"></div>
-            <h1 style="text-align: center;">The goal running distance : 815km / 1,000km</h1>
-            <div class="progress">
-                progress : <progress max="1000" value="815"></progress> <br>
-            </div>
-        </article>
+      <div class="running">
+        <div class="progress">
+          <div id="goal"></div>
+          <h2>873km / 1,000km</h2>
+          <h1><progress max="1000" value="873"></progress></h1>
+        </div>
+      </div>
     </main>
-    <footer>
-        <h5>©Copyright <span id="todayYear"></span> by 허건영. All rights reversed.</h5>
+    <footer class="box">
+      <h5>
+        ©Copyright <span id="todayYear"></span> by 허건영. All rights reversed.
+      </h5>
     </footer>
     <script src="profile.js"></script>
-</body>
+  </body>
 </html>

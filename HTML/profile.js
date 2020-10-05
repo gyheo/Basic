@@ -1,9 +1,6 @@
-let todayStandard = document.querySelector('.todayStandard');
-let footer = document.querySelector('footer');
-let h1 = document.createElement('h1');
-
-todayStandard.appendChild(h1);
-let span = document.getElementById("todayYear");
+let goal = document.querySelector("#goal");
+let footer = document.querySelector("footer");
+let h1 = document.createElement("h1");
 
 let today = new Date();
 
@@ -14,4 +11,4 @@ let day = today.getDate();
 h1.style.textAlign = "center";
 h1.innerHTML = `${year}년 ${month}월 ${day}일 기준`;
 
-span.innerHTML = `${year}`;
+goal.appendChild(h1);
