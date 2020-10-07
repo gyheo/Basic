@@ -1,6 +1,7 @@
 let button = document.querySelector("button");
 let item = document.querySelector("#item");
 let shoppingList = document.querySelector("#shoppingList");
+let hashMap = new Map();
 let order = [];
 let index = 0;
 
@@ -9,6 +10,7 @@ function init() {
 
   for (let i = 0; i < localStorage.length; i++) {
     order.push(localStorage.key(i));
+    hashMap.set(i, localStorage.getItem(order[i]));
   }
 
   // 순서 오름차순 정렬
