@@ -14,7 +14,28 @@ header {
 .running {
   text-align: center;
   height: 700px;
-  padding-top: 200px;
+  padding-top: 150px;
+}
+
+.running-inform {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.running-count {
+  width: 33%;
+  flex: 1;
+}
+
+.running-distance {
+  width: 33%;
+  flex: 1;
+}
+
+.running-pace {
+  width: 33%;
+  flex: 1;
 }
 
 progress {
