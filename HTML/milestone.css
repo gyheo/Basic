@@ -21,23 +21,13 @@ header {
   padding-top: 150px;
 }
 
-.running-inform {
+.total {
   display: flex;
   width: 100%;
   flex: 1;
 }
 
-.running-count {
-  width: 33%;
-  flex: 1;
-}
-
-.running-distance {
-  width: 33%;
-  flex: 1;
-}
-
-.running-pace {
+.running-inform {
   width: 33%;
   flex: 1;
 }
