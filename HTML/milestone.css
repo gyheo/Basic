@@ -18,10 +18,11 @@ header {
 .running {
   text-align: center;
   height: 700px;
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .total {
+  margin-top: 50px;
   display: flex;
   width: 100%;
   flex: 1;
