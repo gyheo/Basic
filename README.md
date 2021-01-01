@@ -1,5 +1,5 @@
-# intro  
-시작부터 한걸음, 한걸음  
+# tutorial  
+It is just a tutorial.    
   
 Source From
 MDN web Documentation.  
